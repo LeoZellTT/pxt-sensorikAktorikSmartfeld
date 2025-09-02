@@ -41,39 +41,28 @@ namespace smartfeldSensoren {
         return RangeInCentimeters;
     }
 
-    //% group="Infrarotsensor 101020174"
-//% subcategory="Optische Sensoren"
-    
-/**
- * IR-Sensor hell
- * Gibt 0 zurück (nur zur intuitiven Darstellung)
- */
-//% block="IR-Sensor hell"
-//% weight=100
-export function irSensorHell(): number {
-    return 0;
+    //% subcategory="Optische Sensoren"
+namespace smartfeldSensoren {
+
+    //% group="Infrarotsensor 101020174" weight=100
+    //% block="IR-Sensor hell"
+    export function irSensorHell(): number {
+        return 0;
+    }
+
+    //% group="Infrarotsensor 101020174" weight=99
+    //% block="IR-Sensor dunkel"
+    export function irSensorDunkel(): number {
+        return 1;
+    }
+
+    //% group="Infrarotsensor 101020174" weight=98
+    //% block="IR-Sensor %pin sieht Linie"
+    export function irSensorSiehtLinie(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
+    }
 }
 
-/**
- * IR-Sensor dunkel
- * Gibt 1 zurück (nur zur intuitiven Darstellung)
- */
-//% block="IR-Sensor dunkel"
-//% weight=99
-export function irSensorDunkel(): number {
-    return 1;
-}
-
-/**
- * IR-Sensor sieht Linie
- * Digitale Abfrage eines Pins, Pin kann ausgewählt werden (P0-P15)
- * Gibt 0 oder 1 zurück, je nachdem ob Linie erkannt wurde
- */
-//% block="IR-Sensor %pin sieht Linie"
-//% weight=98
-export function irSensorSiehtLinie(pin: DigitalPin): number {
-    return pins.digitalReadPin(pin);
-}
 
     
     //% group="Bewegungsmelder 101020617"
