@@ -4,7 +4,7 @@
  */
 
 //% color="#0fbc11" icon="\uf185"
-namespace smartfeldSensoren {
+namespace smartfeldSensoren_test {
 
     const gestureEventId = 3100;
     let lastGesture = GroveGesture.None;
