@@ -18,7 +18,7 @@ namespace smartfeldSensoren {
     //let sen0322 = new SEN0322();
 
     //% group="Ultraschallsensor 101020010"
-    //% block="Distanz in cm (TEST3) |%pin"
+    //% block="Distanz in cm (TEST4) |%pin"
     //% subcategory="Optische Sensoren" weight=100
     export function measureInCentimetersV2(pin: DigitalPin): number {
         let distanceBackup: number = 0;
