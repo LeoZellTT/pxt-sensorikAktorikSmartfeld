@@ -15,6 +15,7 @@ namespace smartfeldSensoren {
     let dfr0792 = new DFR0792();
     let aht20 = new AHT20();
     let scd30 = new SCD30();
+    //let sen0322 = new SEN0322();
 
     //% group="Ultraschallsensor 101020010"
     //% block="Distanz in cm (TEST2) |%pin"
@@ -40,6 +41,30 @@ namespace smartfeldSensoren {
         return RangeInCentimeters;
     }
 
+    //% subcategory="Optische Sensoren"
+namespace smartfeldSensoren {
+
+    //% group="Infrarotsensor 101020174" weight=100
+    //% block="IR-Sensor hell"
+    export function irSensorHell(): number {
+        return 0;
+    }
+
+    //% group="Infrarotsensor 101020174" weight=99
+    //% block="IR-Sensor dunkel"
+    export function irSensorDunkel(): number {
+        return 1;
+    }
+
+    //% group="Infrarotsensor 101020174" weight=98
+    //% block="IR-Sensor %pin sieht Linie"
+    export function irSensorSiehtLinie(pin: DigitalPin): number {
+        return pins.digitalReadPin(pin);
+    }
+}
+
+
+    
     //% group="Bewegungsmelder 101020617"
     //% block="erkenne Bewegung |%pin"
     //% subcategory="Optische Sensoren" weight=50
@@ -418,4 +443,30 @@ namespace smartfeldSensoren {
         return Math.round(aht20.aht20ReadHumidity() * 100) / 100;
     }
 
+    /*//% subcategory="Umweltsensoren" weight=96
+    //% group="Sauerstoffsensor SEN0322"
+    //% block="init Sauerstoffsensor ID %id"
+    //% id.min=0 id.max=3
+    export function init_sauerstoff(id = 0) {
+        if (this.id < 0 || this.id > 3) {
+            sen0322.setAddress(0);
+        }
+        else {
+            sen0322.setAddress(id);
+        }
+    }
+
+    //% subcategory="Umweltsensoren" weight=95
+    //% group="Sauerstoffsensor SEN0322"
+    //% block="Lese Sauerstoffsättigung(Prozent) %meanNum"
+    //% meanNum.min=1 meanNum.max=100
+    export function lese_sauerstoff(meanNum = 1) {
+        if (this.meanNum < 1) {
+            this.meanNum = 1;
+        }
+        if (this.meanNum > 100) {
+            this.meanNum = 100;
+        }
+        return sen0322.getOxygenData(this.meanNum);
+    }*/
 }
