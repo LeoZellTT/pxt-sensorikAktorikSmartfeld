@@ -16,7 +16,7 @@ namespace smartfeldSensoren_test {
     let aht20 = new AHT20();
     let scd30 = new SCD30();
 
-    //% group="Ultraschallsensor 101020010"
+    //% group="Ultraschallsensor 101020010 TEST"
     //% block="Distanz in cm |%pin"
     //% subcategory="Optische Sensoren" weight=100
     export function measureInCentimetersV2(pin: DigitalPin): number {
