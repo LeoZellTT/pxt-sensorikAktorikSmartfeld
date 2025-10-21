@@ -17,7 +17,7 @@ namespace smartfeldSensoren {
     let scd30 = new SCD30();
 
     //% group="Ultraschallsensor 101020010"
-    //% block="Distanz in cm (TEST) |%pin"
+    //% block="Distanz in cm (TEST2) |%pin"
     //% subcategory="Optische Sensoren" weight=100
     export function measureInCentimetersV2(pin: DigitalPin): number {
         let distanceBackup: number = 0;
